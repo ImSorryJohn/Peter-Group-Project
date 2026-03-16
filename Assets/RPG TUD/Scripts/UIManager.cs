@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI promptText;
     public TextMeshProUGUI questTitle;
     public TextMeshProUGUI questDescription;
+    public TextMeshProUGUI levelText;
     public GameObject questWindow;
     public DialogueManager dialogueManager;
     private bool promptActive = false;
@@ -41,6 +42,11 @@ public class UIManager : MonoBehaviour
     public void UpdateHealthBar(int current, int max)
     {
         healthBar.value = (float)current / max;
+    }
+
+    public void UpdateLevel(int level)
+    {
+        levelText.text = "" + level;
     }
 
     public void UpdateXPBar(int current, int max)

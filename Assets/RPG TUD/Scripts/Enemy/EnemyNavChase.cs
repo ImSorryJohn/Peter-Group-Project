@@ -46,7 +46,7 @@ public class EnemyNavChase : MonoBehaviour
 
         float distance = Vector3.Distance(enemy.transform.position, player.position);
 
-        // Player too far away — idle
+        // Player too far away ï¿½ idle
         if (distance > detectionRange)
         {
             Idle();
@@ -87,8 +87,8 @@ public class EnemyNavChase : MonoBehaviour
 
         if (Time.time >= nextAttackTime)
         {
-            animator.ResetTrigger("Attack");
-            animator.SetTrigger("Attack");
+            //animator.ResetTrigger("Attack");
+            //animator.SetTrigger("Attack");
 
             nextAttackTime = Time.time + attackCooldown;
         }

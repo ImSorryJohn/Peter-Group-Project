@@ -9247,7 +9247,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -214.03989, y: -0.000030517578}
+  m_AnchoredPosition: {x: -214.03992, y: 0}
   m_SizeDelta: {x: 100, y: 105}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1396972962
@@ -11666,6 +11666,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   transitionAnim: {fileID: 1136684703}
+  Enemy: {fileID: 1823252269}
 --- !u!1001 &1777480714
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using StarterAssets;
 
 public class SceneController : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class SceneController : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -34,7 +35,16 @@ public class SceneController : MonoBehaviour
     {
         transitionAnim.SetTrigger("End");
         yield return new WaitForSeconds(1);
-        SceneManager.LoadSceneAsync("BattleScene");
+        
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        ThirdPersonController controller = player.GetComponent<ThirdPersonController>();
+
+        if (controller != null)
+        {
+            controller.enabled = false;
+        }
+
+        SceneManager.LoadSceneAsync("BattleScene", LoadSceneMode.Additive);
         transitionAnim.SetTrigger("Start");
     }
 }

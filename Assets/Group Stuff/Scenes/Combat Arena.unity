@@ -3347,10 +3347,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BattleStateMachine
   battleStates: 0
-  PlayerInBattle:
-  - {fileID: 1548608288}
-  EnemyInBattle:
-  - {fileID: 744452400}
+  PerformList: []
+  PlayerInBattle: []
+  EnemyInBattle: []
 --- !u!4 &1820567083
 Transform:
   m_ObjectHideFlags: 0

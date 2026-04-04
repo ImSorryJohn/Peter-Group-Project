@@ -35,6 +35,8 @@ public class EnemyStateMachine : MonoBehaviour
                 UpdateProgressBar();
                 break;
             case TurnState.CHOOSEACTION:
+                ChooseAction();
+                currentState = TurnState.WAITING;
                 break;
             case TurnState.WAITING:
                 break;

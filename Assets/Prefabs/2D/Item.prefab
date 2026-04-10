@@ -284,6 +284,7 @@ GameObject:
   - component: {fileID: 6805429291226518713}
   - component: {fileID: 9201117080169725064}
   - component: {fileID: 5730421845636555931}
+  - component: {fileID: 73077300222313709}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -394,7 +395,32 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 9201117080169725064}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 73077300222313709}
+        m_TargetAssemblyTypeName: InventoryItemController, Assembly-CSharp
+        m_MethodName: UseItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &73077300222313709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5413932228525935207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 737c543a65233524389b61c4e8740060, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InventoryItemController
+  item: {fileID: 0}
 --- !u!1 &6447633326792417243
 GameObject:
   m_ObjectHideFlags: 0

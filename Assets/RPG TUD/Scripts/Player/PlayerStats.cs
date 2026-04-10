@@ -1,8 +1,11 @@
 using UnityEngine;
+using TMPro;
 
 
 public class PlayerStats : MonoBehaviour
 {
+    public static PlayerStats Instance;
+
     public int maxHealth = 100;
     public int currentHealth;
     public int attackDamage = 10;
@@ -11,6 +14,9 @@ public class PlayerStats : MonoBehaviour
     public int experience;
     public int xpToNextLevel = 50;
 
+    public TextMeshProUGUI healthText;
+    public TextMeshProUGUI ExpText;
+
     public UIManager ui;
 
     void Start()
@@ -18,7 +24,13 @@ public class PlayerStats : MonoBehaviour
         currentHealth = maxHealth;
         ui.UpdateHealthBar(currentHealth, maxHealth);
         ui.UpdateXPBar(experience, xpToNextLevel);
+        ui.UpdateLevel(level);
 
+    }
+
+    private void Awake()
+    {
+        Instance = this;
     }
 
     public void TakeDamage(int amount)
@@ -54,5 +66,19 @@ public class PlayerStats : MonoBehaviour
         currentHealth = maxHealth;
 
         ui.UpdateHealthBar(currentHealth, maxHealth);
+        ui.UpdateLevel(level);
+    }
+
+    public void IncreaseHealth(int value)
+    {
+        currentHealth = Mathf.Min(currentHealth + value, maxHealth);
+        ui.UpdateHealthBar(currentHealth, maxHealth);
+    }
+
+        public void IncreaseExp(int value)
+    {
+        GainXP(value);
+        //experience += value;
+        //ui.UpdateXPBar(experience, xpToNextLevel);
     }
 }

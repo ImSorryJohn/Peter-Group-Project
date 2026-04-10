@@ -68,7 +68,7 @@ public class BagManager : MonoBehaviour
             var itemName = obj.transform.Find("ItemName").GetComponent<TextMeshProUGUI>();
             var itemIcon = obj.transform.Find("ItemIcon").GetComponent<Image>();
             //var removeButton = obj.transform.Find("RemoveButton").GetComponent<Button>();
-            //var controller = obj.GetComponent<InventoryItemController>();
+            var controller = obj.GetComponent<InventoryItemController>();
 
             if (itemName != null)
                 itemName.text = item.itemName;
@@ -76,8 +76,8 @@ public class BagManager : MonoBehaviour
             if (itemIcon != null)
                 itemIcon.sprite = item.icon;
 
-            //if (controller != null)
-                //controller.AddItem(item);
+            if (controller != null)
+                controller.AddItem(item);
 
             //if (removeButton != null && controller != null)
             //{

@@ -6,8 +6,10 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public Slider healthBar;
-    public Slider xpBar;
+    //public Slider healthBar;
+    public Image xpFill;
+    public TextMeshProUGUI xpText;
+    public TextMeshProUGUI healthText;
     public GameObject damagePopup;
     public static UIManager Instance;
     public TextMeshProUGUI promptText;
@@ -41,17 +43,25 @@ public class UIManager : MonoBehaviour
 
     public void UpdateHealthBar(int current, int max)
     {
-        healthBar.value = (float)current / max;
+        //healthBar.value = (float)current / max;
+
+        healthText.text = "HP: " + $"{current} / {max}"; 
     }
 
     public void UpdateLevel(int level)
     {
-        levelText.text = "" + level;
+        levelText.text = "Lvl: " + level;
     }
 
     public void UpdateXPBar(int current, int max)
     {
-        xpBar.value = (float)current / max;
+        float percent = (float)current / max;
+
+        if (xpFill != null)
+            xpFill.fillAmount = percent;
+
+        if (xpText != null)
+            xpText.text = $"XP: {current} / {max}";
     }
 
     public void ShowDamagePopup(int amount)

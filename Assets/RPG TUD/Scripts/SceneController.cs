@@ -44,7 +44,7 @@ public class SceneController : MonoBehaviour
             controller.enabled = false;
         }
 
-        SceneManager.LoadSceneAsync("BattleScene", LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync("Combat Arena", LoadSceneMode.Additive);
         transitionAnim.SetTrigger("Start");
     }
 }

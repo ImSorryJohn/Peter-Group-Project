@@ -7,6 +7,7 @@ public class EnemyHealth : MonoBehaviour
     public int attackDamage = 5;
     public int xpReward = 20;
     public float hitStunDuration = 0.4f;
+    public PlayerStats PlayerStats;
     public Animator animator;
     public EnemyNavChase enemyAI;
 
@@ -43,6 +44,7 @@ public class EnemyHealth : MonoBehaviour
 
     void Die()
     {
+        PlayerStats.GainXP(xpReward);
         Destroy(gameObject);
     }
 }

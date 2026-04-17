@@ -4,7 +4,16 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/RPG TUD/Scenes/Development/RPG Level.unity
+    guid: 2f118784652a3d841ac190ae391ad761
+  - enabled: 1
+    path: Assets/Group Stuff/Scenes/BattleScene.unity
+    guid: c17181b11f1754b4383e4761238e0305
+  - enabled: 1
+    path: Assets/Group Stuff/Scenes/Combat Arena.unity
+    guid: 7ef0a2357f9a6f347a54800368932bfc
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 289c1b55c9541489481df5cc06664110, type: 3}
   m_UseUCBPForAssetBundles: 0

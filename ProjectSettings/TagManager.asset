@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - InventoryItem
   - QuestItem
+  - Spacer
   layers:
   - Default
   - TransparentFX

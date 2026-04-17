@@ -51,11 +51,15 @@ public class HeroStateMachine : MonoBehaviour
                 currentState = TurnState.WAITING;
                 break;
             case TurnState.WAITING:
+
                break;
             case TurnState.ACTION:
                 StartCoroutine(TimeForAction());
+
                 break;
             case TurnState.DEAD:
+                    currentCooldown = 0f;
+
                 break;
         }
     }

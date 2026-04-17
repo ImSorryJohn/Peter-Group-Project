@@ -65,10 +65,10 @@ public class BattleStateMachine : MonoBehaviour
                 break;
             case PerformAction.TAKEACTION:
                 GameObject performer= GameObject.Find(PerformList[0].Attacker);
-                if(PerformList[0].Type == "Enemy")                {
-                 EnemyStateMachine ESM = performer.GetComponent<EnemyStateMachine>();
-                 ESM.HeroToAttack = PerformList[0].AttackersTarget;   
-                 ESM.currentState = EnemyStateMachine.TurnState.ACTION;
+               if(PerformList[0].Type == "Enemy")                {
+//                 EnemyStateMachine ESM = performer.GetComponent<EnemyStateMachine>();
+  //              ESM.HeroToAttack = PerformList[0].AttackersTarget;   
+    //            ESM.currentState = EnemyStateMachine.TurnState.ACTION;
                 }
                 if(PerformList[0].Type == "Player")
                 {
@@ -116,12 +116,12 @@ public class BattleStateMachine : MonoBehaviour
         {
             GameObject newButton = Instantiate(enemyButton) as GameObject;
             SelectButton button = newButton.GetComponent<SelectButton>();
-            //button.EnemyPrefab = enemy;
-            EnemyStateMachine currentEnemy = enemy.GetComponent<EnemyStateMachine>();
-            TMP_Text buttonText = newButton.transform.Find("Text").gameObject.GetComponent<TMP_Text>();           
-            buttonText.text = currentEnemy.enemy.name;
             button.EnemyPrefab = enemy;
-           // newButton.transform.SetParent(Spacer.transform, false);
+            EnemyStateMachine currentEnemy = enemy.GetComponent<EnemyStateMachine>();
+//    TMP_Text buttonText = newButton.transform.Find("Text").gameObject.GetComponent<TMP_Text>();           
+ //        buttonText.text = currentEnemy.enemy.name;
+           button.EnemyPrefab = enemy;
+           newButton.transform.SetParent(Spacer.transform, false);
         } 
   }
 
@@ -141,7 +141,7 @@ public class BattleStateMachine : MonoBehaviour
   void HeroInputDone()
     {
         PerformList.Add(HeroChoice);
-       EnemySelectPanel.SetActive(false);
+        EnemySelectPanel.SetActive(false);
         HeroesToManage[0].transform.Find("Selector").gameObject.SetActive(false);;
         HeroesToManage.RemoveAt(0);
         HeroInput = HeroGUI.ACTIVATE;

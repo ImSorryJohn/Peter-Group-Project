@@ -858,7 +858,7 @@ MonoBehaviour:
     curATK: 15
     baseDEF: 0
     curDEF: 0
-  currentState: 0
+  currentState: 1
   HeroToAttack: {fileID: 0}
 --- !u!1 &805947852
 GameObject:

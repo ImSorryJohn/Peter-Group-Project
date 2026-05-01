@@ -31,7 +31,7 @@ public class HeroStateMachine : MonoBehaviour
     void Start()
     {
         startPosition = transform.position;
-        currentCooldown = 2.5f;
+        currentCooldown = 0f;
         currentState = TurnState.PROCESSING;
         Selector.SetActive(false);
         BSM = GameObject.Find("BattleManager").GetComponent<BattleStateMachine>();

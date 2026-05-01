@@ -13,7 +13,6 @@ public class EnemyStateMachine : MonoBehaviour
         PROCESSING,
         CHOOSEACTION,
         WAITING,
-        SELECTING,
         ACTION,
         DEAD
     }
@@ -44,8 +43,6 @@ public class EnemyStateMachine : MonoBehaviour
                 currentState = TurnState.WAITING;
                 break;
             case TurnState.WAITING:
-                break;
-            case TurnState.SELECTING:
                 break;
             case TurnState.ACTION:
                     StartCoroutine(TimeForAction());

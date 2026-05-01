@@ -4,6 +4,11 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using TMPro;
 using Unity.VisualScripting;
+using System.Linq;
+ 
+
+    
+
 public class BattleStateMachine : MonoBehaviour
 {
     public enum PerformAction
@@ -65,16 +70,19 @@ public class BattleStateMachine : MonoBehaviour
                 break;
             case PerformAction.TAKEACTION:
                 GameObject performer= GameObject.Find(PerformList[0].Attacker);
-               if(PerformList[0].Type == "Enemy")                {
-//                 EnemyStateMachine ESM = performer.GetComponent<EnemyStateMachine>();
-  //              ESM.HeroToAttack = PerformList[0].AttackersTarget;   
-    //            ESM.currentState = EnemyStateMachine.TurnState.ACTION;
+               if(PerformList[0].Type == "Enemy")                
+               {
+               EnemyStateMachine ESM = performer.GetComponent<EnemyStateMachine>();
+                ESM.HeroToAttack = PerformList[0].AttackersTarget;   
+               ESM.currentState = EnemyStateMachine.TurnState.ACTION;
                 }
                 if(PerformList[0].Type == "Player")
                 {
+                    Debug.Log("Player is attacking");
                     HeroStateMachine HSM = performer.GetComponent<HeroStateMachine>();
-                    HSM.EnemyToAttack = PerformList[0].AttackersTarget;
-                    HSM.currentState = HeroStateMachine.TurnState.ACTION;}
+                   HSM.EnemyToAttack = PerformList[0].AttackersTarget;
+                   HSM.currentState = HeroStateMachine.TurnState.ACTION;
+                   }
                 break;
             case PerformAction.PERFORMACTION:
                 // code for performing action
@@ -86,7 +94,7 @@ public class BattleStateMachine : MonoBehaviour
 
         switch (HeroInput)
         {
-            case HeroGUI.ACTIVATE:
+            case (HeroGUI.ACTIVATE):
                 // code for activating hero GUI
                 if(HeroesToManage.Count > 0)
                 {
@@ -96,10 +104,11 @@ public class BattleStateMachine : MonoBehaviour
                     HeroInput = HeroGUI.WAITING;
                 }
                 break;
-            case HeroGUI.WAITING:
+            case (HeroGUI.WAITING):
                 // code for waiting for player input    
+                   
                 break;
-            case HeroGUI.DONE:
+            case (HeroGUI.DONE):
                 HeroInputDone();
                 // code for finishing player input and removing from list
                 break;
@@ -117,15 +126,15 @@ public class BattleStateMachine : MonoBehaviour
             GameObject newButton = Instantiate(enemyButton) as GameObject;
             SelectButton button = newButton.GetComponent<SelectButton>();
             button.EnemyPrefab = enemy;
-            EnemyStateMachine currentEnemy = enemy.GetComponent<EnemyStateMachine>();
-//    TMP_Text buttonText = newButton.transform.Find("Text").gameObject.GetComponent<TMP_Text>();           
- //        buttonText.text = currentEnemy.enemy.name;
-           button.EnemyPrefab = enemy;
-           newButton.transform.SetParent(Spacer.transform, false);
+            EnemyStateMachine currentEnemy = enemy.GetComponent<EnemyStateMachine>();    
+//            TMP_Text buttonText = newButton.transform.Find("Text").gameObject.GetComponent<TMP_Text>();           
+  //          buttonText.text = currentEnemy.enemy.name;
+            button.EnemyPrefab = enemy;
+            newButton.transform.SetParent(Spacer.transform, false);
         } 
   }
 
-  public void Input1()
+  public void Input1() //attackers button
   {
       HeroChoice.Attacker = HeroesToManage[0].name;
       HeroChoice.Type = "Player";

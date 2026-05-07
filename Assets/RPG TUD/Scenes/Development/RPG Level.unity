@@ -2013,7 +2013,7 @@ MonoBehaviour:
   questGoal:
   - Bring me chicken now!
   questEnd:
-  - Yummy now im full! Thank you!
+  - Yummy, now im full! Thank you!
   questState: 0
   questRequirements:
   - Chicken
@@ -15165,7 +15165,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1720933031
 RectTransform:
   m_ObjectHideFlags: 0
@@ -26142,7 +26142,6 @@ GameObject:
   - component: {fileID: 8181382823811991466}
   - component: {fileID: 8181382823811991471}
   - component: {fileID: 8181382823811991473}
-  - component: {fileID: 8181382823811991472}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -29658,19 +29657,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   interactKey: 101
---- !u!114 &8181382823811991472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5558642023069457364}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91f67fe2ba50e3f4e90d7142a42e32ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  uiManager: {fileID: 588622090}
 --- !u!114 &8181382823811991473
 MonoBehaviour:
   m_ObjectHideFlags: 0

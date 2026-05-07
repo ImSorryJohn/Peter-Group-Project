@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerObjectTrigger : MonoBehaviour
 {
     public InventoryManager inventory;
-    public QuestManager questManager;
+    //public QuestManager questManager;
     private string currentQuestID;
 
 
@@ -22,21 +22,19 @@ public class PlayerObjectTrigger : MonoBehaviour
         {
             QuestItem questData = other.GetComponent<QuestItem>();  
 
-            if (questManager.IsQuestActive())
-            {
-                currentQuestID = questManager.GetCurrentQuestID();
+            //if (questManager.IsQuestActive())
+            //{
+                //currentQuestID = questManager.GetCurrentQuestID();
 
                 // easier to read
-                string objectQuestID = questData.GetQuest().questID;
+                //string objectQuestID = questData.GetQuest().questID;
 
-                if (objectQuestID.Contains(currentQuestID))
-                {
-                    questManager.CompleteQuest(currentQuestID);
-                    other.gameObject.SetActive(false);
-                }
-            }    
-            
-        }
+                //if (objectQuestID.Contains(currentQuestID))
+                //{
+                    //questManager.CompleteQuest(currentQuestID);
+                    //other.gameObject.SetActive(false);
+                //}
+        }    
 
     }
 }

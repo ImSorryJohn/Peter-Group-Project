@@ -110,6 +110,11 @@ namespace StarterAssets
 
         private bool _hasAnimator;
 
+        public Transform mostRecentTrigger;
+
+        public string[] inventory;
+        public DialogueManager dialogueManager;
+
         private bool IsCurrentDeviceMouse
         {
             get
@@ -150,6 +155,8 @@ namespace StarterAssets
             // reset our timeouts on start
             _jumpTimeoutDelta = JumpTimeout;
             _fallTimeoutDelta = FallTimeout;
+
+            dialogueManager = FindObjectOfType<DialogueManager>();
         }
 
         private void Update()
@@ -159,6 +166,16 @@ namespace StarterAssets
             JumpAndGravity();
             GroundedCheck();
             Move();
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                OnInteract();
+            }
+            
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                OnProgressDialogue();
+            }
         }
 
         private void LateUpdate()
@@ -214,6 +231,7 @@ namespace StarterAssets
         private void Move()
         {
             // set target speed based on move speed, sprint speed and if sprint is pressed
+                                //_input.sprint ? SprintSpeed : MoveSpeed;
             float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
 
             // a simplistic acceleration and deceleration designed to be easy to remove, replace, or iterate upon
@@ -387,6 +405,23 @@ namespace StarterAssets
             {
                 AudioSource.PlayClipAtPoint(LandingAudioClip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
             }
+        }
+
+         public void OnInteract()
+        {
+            if (mostRecentTrigger == null) return;
+            
+            if (mostRecentTrigger.CompareTag("Interactable") &&
+                mostRecentTrigger.TryGetComponent(out NPCController npcController))
+            {
+                npcController.OnFirstInteract();
+            }
+        }
+
+        public void OnProgressDialogue()
+        {
+            if (dialogueManager.isActive)
+                dialogueManager.OnProgressDialogue();
         }
     }
 }

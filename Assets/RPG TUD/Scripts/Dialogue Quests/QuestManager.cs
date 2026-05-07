@@ -20,54 +20,54 @@ public class QuestManager : MonoBehaviour
 
     public void RegisterQuest(Quest quest)
     {
-        if (!quests.ContainsKey(quest.questID))
-            quests.Add(quest.questID, quest);
+        //if (!quests.ContainsKey(quest.questID))
+            //quests.Add(quest.questID, quest);
     }
 
-    public QuestState GetQuestState(string questID)
-    {
-        return quests.ContainsKey(questID)
-            ? quests[questID].state
-            : QuestState.NotStarted;
-    }
+    //public QuestState GetQuestState(string questID)
+    //{
+        //return quests.ContainsKey(questID)
+            //? quests[questID].state
+            //: QuestState.NotStarted;
+    //}
 
     public void StartQuest(string questID)
     {
         if (!quests.ContainsKey(questID)) return;
 
-        quests[questID].state = QuestState.InProgress;
+        //quests[questID].state = QuestState.InProgress;
         currentQuest = quests[questID];
         Debug.Log("Quest Started: " + questID);
 
-        StartCoroutine(DisplayQuest());
+        //StartCoroutine(DisplayQuest());
  
     }
 
     public void CompleteQuest(string questID)
     {
-        if (!quests.ContainsKey(questID)) return;
+        //if (!quests.ContainsKey(questID)) return;
 
-        quests[questID].state = QuestState.Completed;
-        Debug.Log("Quest Completed: " + questID);
-        uiManager.ClearPromptText();
+        //quests[questID].state = QuestState.Completed;
+        //Debug.Log("Quest Completed: " + questID);
+        //uiManager.ClearPromptText();
     }
 
 
 
 
 
-    IEnumerator DisplayQuest()
-    {
-        uiManager.DisplayQuest(true, currentQuest.questTitle, currentQuest.description);
-        yield return new WaitForSeconds(5);
-        uiManager.DisplayQuest(false, "", "");
-    }
+    //IEnumerator DisplayQuest()
+    //{
+        //uiManager.DisplayQuest(true, currentQuest.questTitle, currentQuest.description);
+        //yield return new WaitForSeconds(5);
+        //uiManager.DisplayQuest(false, "", "");
+    //}
 
 
-    public string GetCurrentQuestID()
-    {
-        return currentQuest.questID;
-    }
+    //public string GetCurrentQuestID()
+    //{
+        //return currentQuest.questID;
+    //}
 
 
     public bool IsQuestActive()

@@ -9,6 +9,7 @@ TagManager:
   - InventoryItem
   - QuestItem
   - Spacer
+  - BattleManager
   layers:
   - Default
   - TransparentFX

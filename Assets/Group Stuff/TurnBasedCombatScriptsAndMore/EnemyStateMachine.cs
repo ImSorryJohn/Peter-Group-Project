@@ -1,5 +1,9 @@
 using UnityEngine;
 using System.Collections;
+using System.Dynamic;
+using System.Diagnostics;
+using System.Collections.Generic;
+
 
 public class EnemyStateMachine : MonoBehaviour
 {
@@ -20,11 +24,13 @@ public class EnemyStateMachine : MonoBehaviour
     private float currentCooldown = 0f;
     private float maxCooldown = 5f;
     private Vector3 startPosition;
+    public GameObject Selector;
     public GameObject HeroToAttack;
     private bool actionStarted = false;
     private float animSpeed = 5f;
     void Start()
     {
+        Selector.SetActive(false);    
         currentState = TurnState.PROCESSING;
         BSM = GameObject.Find("BattleManager").GetComponent<BattleStateMachine>();
         startPosition = transform.position;
@@ -64,11 +70,15 @@ public class EnemyStateMachine : MonoBehaviour
     void ChooseAction()
     {
         HandleTurns myAttack = new HandleTurns();
-        myAttack.Attacker = enemy.name;
+        myAttack.Attacker = enemy.theName;
         myAttack.Type = "Enemy";
         myAttack.AttackersGameObject = this.gameObject;
         myAttack.AttackersTarget = BSM.PlayerInBattle[Random.Range(0, BSM.PlayerInBattle.Count)];
+        int num = Random.Range(0, enemy.Attacks.Count);
+        myAttack.ChooseAttack = enemy.Attacks[num];
+        //Debug.Log (this.gameObject.name + " has chosen " + myAttack.ChooseAttack.AttackName + " and does " + myAttack.ChooseAttack.AttackDamage + " damage!");
         BSM.PerformList.Add(myAttack);
+        
     }
 
     private IEnumerator TimeForAction()

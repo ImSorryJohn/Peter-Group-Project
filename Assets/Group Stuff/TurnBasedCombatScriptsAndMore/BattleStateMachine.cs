@@ -128,8 +128,8 @@ public class BattleStateMachine : MonoBehaviour
             SelectButton button = newButton.GetComponent<SelectButton>();
             button.EnemyPrefab = enemy;
             EnemyStateMachine currentEnemy = enemy.GetComponent<EnemyStateMachine>();    
-//            TMP_Text buttonText = newButton.transform.Find("Text").gameObject.GetComponent<TMP_Text>();           
-  //          buttonText.text = currentEnemy.enemy.name;
+            TMP_Text buttonText = newButton.transform.Find("Text").gameObject.GetComponent<TMP_Text>();           
+            buttonText.text = currentEnemy.enemy.theName;
             button.EnemyPrefab = enemy;
             newButton.transform.SetParent(Spacer.transform, false);
         } 

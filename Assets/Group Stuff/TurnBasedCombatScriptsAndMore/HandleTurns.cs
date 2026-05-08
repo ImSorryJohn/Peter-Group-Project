@@ -9,5 +9,7 @@ public class HandleTurns
     public GameObject AttackersGameObject;
     public GameObject AttackersTarget;
 
+    public BaseAttack ChooseAttack;
+
     
 }

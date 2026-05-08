@@ -2956,6 +2956,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 5088778544463177698, guid: 9ab148bc719736d499a1f75905fab3db, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d0635c5725ebf5c49ba6eee6b99dadb6, type: 2}
     - target: {fileID: 5343246913952829805, guid: 9ab148bc719736d499a1f75905fab3db, type: 3}
       propertyPath: enemy.Attacks.Array.size
       value: 1

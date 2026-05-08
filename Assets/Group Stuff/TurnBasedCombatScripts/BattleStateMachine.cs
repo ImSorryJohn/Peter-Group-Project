@@ -69,19 +69,20 @@ public class BattleStateMachine : MonoBehaviour
                 }
                 break;
             case PerformAction.TAKEACTION:
-                GameObject performer= GameObject.Find(PerformList[0].Attacker);
+                GameObject performer = PerformList[0].AttackersGameObject;
                if(PerformList[0].Type == "Enemy")                
                {
-               EnemyStateMachine ESM = performer.GetComponent<EnemyStateMachine>();
-                ESM.HeroToAttack = PerformList[0].AttackersTarget;   
-               ESM.currentState = EnemyStateMachine.TurnState.ACTION;
+                    Debug.Log("Enemy is attacking");
+                    EnemyStateMachine ESM = performer.GetComponent<EnemyStateMachine>();
+                    ESM.HeroToAttack = PerformList[0].AttackersTarget;   
+                    ESM.currentState = EnemyStateMachine.TurnState.ACTION;
                 }
                 if(PerformList[0].Type == "Player")
                 {
                     Debug.Log("Player is attacking");
                     HeroStateMachine HSM = performer.GetComponent<HeroStateMachine>();
-                   HSM.EnemyToAttack = PerformList[0].AttackersTarget;
-                   HSM.currentState = HeroStateMachine.TurnState.ACTION;
+                    HSM.EnemyToAttack = PerformList[0].AttackersTarget;
+                    HSM.currentState = HeroStateMachine.TurnState.ACTION;
                    }
                 break;
             case PerformAction.PERFORMACTION:

@@ -4,9 +4,9 @@ using StarterAssets;
 public class NPCController : MonoBehaviour
 {
 
-    public Transform playerTransform;
+    //public Transform playerTransform;
     public DialogueManager dialogueManager;
-    private ThirdPersonController playerController; 
+    //private ThirdPersonController playerController; 
 
     public string characterName;
     public string[] introDialogue;
@@ -20,7 +20,7 @@ public class NPCController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        playerController = playerTransform.GetComponentInParent<ThirdPersonController>();
+        //playerController = playerTransform.GetComponentInParent<ThirdPersonController>();
         dialogueManager = FindObjectOfType<DialogueManager>();
         quests = GetComponents<Quest>();
     }
@@ -68,9 +68,10 @@ public class NPCController : MonoBehaviour
                 break;
             case QuestState.Served:
                 ConfigureDialogue(activeQuest.questGoal);
-                if (activeQuest.CheckInventoryRequirement(playerController.inventory)) activeQuest.questState = QuestState.Complete;
+                if (activeQuest.CheckInventoryRequirement()) activeQuest.questState = QuestState.Complete;
                 break;
             case QuestState.Complete:
+                activeQuest.RemoveQuestItems();
                 ConfigureDialogue(activeQuest.questEnd);
                 activeQuest = null;
                 break;

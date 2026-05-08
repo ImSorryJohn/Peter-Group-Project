@@ -1939,7 +1939,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b677fe3738303f14996416f6095140f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPCController
-  playerTransform: {fileID: 5075437846096855406}
   dialogueManager: {fileID: 2102994035}
   characterName: John
   introDialogue:
@@ -7765,7 +7764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69555023f59a3b8449c7f4259e6ea0bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemPickup
-  Item: {fileID: 11400000, guid: 1e5e887635533eb4291eae7775e895e9, type: 2}
+  Item: {fileID: 11400000, guid: bf708b67d0245e24f9e26521e577a063, type: 2}
 --- !u!114 &821000939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7778,7 +7777,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c826b0899baad29489cc69fe77a3934c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemController
-  Item: {fileID: 11400000, guid: 1e5e887635533eb4291eae7775e895e9, type: 2}
+  Item: {fileID: 11400000, guid: bf708b67d0245e24f9e26521e577a063, type: 2}
 --- !u!4 &839260399 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8588122464579329139, guid: 26884749826e6774aa58a039de667f50, type: 3}
@@ -9395,7 +9394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69555023f59a3b8449c7f4259e6ea0bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemPickup
-  Item: {fileID: 11400000, guid: bf708b67d0245e24f9e26521e577a063, type: 2}
+  Item: {fileID: 11400000, guid: 1e5e887635533eb4291eae7775e895e9, type: 2}
 --- !u!114 &971880367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9408,7 +9407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c826b0899baad29489cc69fe77a3934c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemController
-  Item: {fileID: 11400000, guid: bf708b67d0245e24f9e26521e577a063, type: 2}
+  Item: {fileID: 11400000, guid: 1e5e887635533eb4291eae7775e895e9, type: 2}
 --- !u!1 &986581519
 GameObject:
   m_ObjectHideFlags: 0
@@ -18204,7 +18203,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6378768897947534654, guid: 45804eb2722b83845adbcf2d72da12dd, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8401156109603033622, guid: 45804eb2722b83845adbcf2d72da12dd, type: 3}
       propertyPath: m_Enabled
@@ -26317,7 +26316,6 @@ MonoBehaviour:
   CameraAngleOverride: 0
   LockCameraPosition: 0
   mostRecentTrigger: {fileID: 0}
-  inventory: []
   dialogueManager: {fileID: 0}
 --- !u!4 &5567764241017911580
 Transform:

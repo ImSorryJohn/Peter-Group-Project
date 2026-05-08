@@ -21,12 +21,40 @@ public class Quest : MonoBehaviour
     [Header("Inventory Requirement")]
     public string[] questRequirements;
     
-    public bool CheckInventoryRequirement(string[] inventory)
+    public bool CheckInventoryRequirement()//string[] inventory)
     {
-        foreach (var s in questRequirements)
+        foreach (var requirement in questRequirements)
         {
-            if (!inventory.Contains(s)) return false;
+            bool found = false;
+
+            foreach (var item in BagManager.Instance.Items)
+            {
+                if (item.itemName == requirement)
+                {
+                    found = true;
+                    break;
+                }
+            }
+
+            if (!found)
+            return false;
         }
         return true;
+    }
+
+    public void RemoveQuestItems()
+    {
+
+        foreach (var requirement in questRequirements)
+        {
+            foreach (var item in BagManager.Instance.Items)
+            {
+                if (item.itemName == requirement)
+                {
+                    BagManager.Instance.Remove(item);
+                    break;
+                }
+            }
+        }
     }
 }

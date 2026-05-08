@@ -112,7 +112,7 @@ namespace StarterAssets
 
         public Transform mostRecentTrigger;
 
-        public string[] inventory;
+        //public string[] inventory;
         public DialogueManager dialogueManager;
 
         private bool IsCurrentDeviceMouse

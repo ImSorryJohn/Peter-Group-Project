@@ -29,13 +29,13 @@ public class UIManager : MonoBehaviour
     private void OnEnable()
     {
         PlayerInteraction.OnInteractableTriggered += ShowPrompt;
-        PlayerInteraction.OnDialogueTriggered += ShowDialogue;
+        //PlayerInteraction.OnDialogueTriggered += ShowDialogue;
         InventoryManager.OnInventoryChange += UpdatePromptDisplay;
     }
     private void OnDisable()
     {
         PlayerInteraction.OnInteractableTriggered -= ShowPrompt;
-        PlayerInteraction.OnDialogueTriggered -= ShowDialogue;
+        //PlayerInteraction.OnDialogueTriggered -= ShowDialogue;
         InventoryManager.OnInventoryChange -= UpdatePromptDisplay;
     }
 
@@ -92,17 +92,17 @@ public class UIManager : MonoBehaviour
     }
 
 
-    public void ShowDialogue(bool show, DialogueTrigger trigger)
-    {
-        if (show)
-        {
-            dialogueManager.StartDialogue(trigger.dialogue);
-        }
-        else
-        {
-            dialogueManager.EndDialogue();
-        }
-    }
+    //public void ShowDialogue(bool show, DialogueTrigger trigger)
+    //{
+        //if (show)
+        //{
+            //dialogueManager.StartDialogue(trigger.dialogue);
+        //}
+        //else
+        //{
+            //dialogueManager.EndDialogue();
+        //}
+    //}
 
 
     public void DisplayQuest(bool display, string title, string description)

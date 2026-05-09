@@ -240,6 +240,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7148179}
   m_CullTransparentMesh: 1
+--- !u!1 &14423491 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4231818597981908544, guid: 9ab148bc719736d499a1f75905fab3db, type: 3}
+  m_PrefabInstance: {fileID: 8234630681502240630}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &49218405
 GameObject:
   m_ObjectHideFlags: 0
@@ -581,7 +586,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3059e537576f2a64291b75eb25746ddf, type: 2}
+  - {fileID: 2100000, guid: a70962a2b44d9b442945cd10e59fd394, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -854,6 +859,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 805947852}
   m_CullTransparentMesh: 1
+--- !u!1 &880378582 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1105373088735445034, guid: 375ffb28549466148a7210091e4457b9, type: 3}
+  m_PrefabInstance: {fileID: 365598135901860227}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &893342714
 GameObject:
   m_ObjectHideFlags: 0
@@ -2195,20 +2205,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1820567081}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e756029ef61f0254ea5d9a3712d6644d, type: 3}
+  m_Script: {fileID: 11500000, guid: ace5d3b76e8bbd94d8faa070310b062d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BattleStateMachine
-  battleStates: 0
-  PerformList: []
-  PlayerInBattle: []
-  EnemyInBattle: []
-  HeroInput: 0
-  HeroesToManage: []
-  enemyButton: {fileID: 8829861202783593016, guid: 607e282fecbcc08458dada34d63a325e, type: 3}
-  Spacer: {fileID: 1200956684}
-  SpacerTransform: {fileID: 1200956685}
-  ActionPanel: {fileID: 1367240655}
-  EnemySelectPanel: {fileID: 805947852}
+  playerPrefab: {fileID: 880378582}
+  enemyPrefab: {fileID: 14423491}
+  playerBattleStation: {fileID: 0}
+  enemyBattleStation: {fileID: 0}
+  dialogueText: {fileID: 0}
+  playerHUD: {fileID: 0}
+  enemyHUD: {fileID: 0}
+  state: 0
 --- !u!4 &1820567083
 Transform:
   m_ObjectHideFlags: 0

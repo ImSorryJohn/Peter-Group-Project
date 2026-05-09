@@ -7,7 +7,7 @@ public class SelectButton : MonoBehaviour
     private GameObject Selector;
     public void SelectEnemy()
     {
-        GameObject.FindWithTag ("BattleManager").GetComponent<BattleStateMachine> ().Input2(EnemyPrefab);  
+       // GameObject.FindWithTag ("BattleManager").GetComponent<BattleStateMachine> ().Input2(EnemyPrefab);  
     }
         
     public void HideSelector()

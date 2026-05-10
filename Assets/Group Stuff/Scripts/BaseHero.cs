@@ -2,16 +2,11 @@ using UnityEngine;
 using System.Collections;   
    [System.Serializable]
 
-public class BaseHero 
+public class BaseHero: BaseClass
 {
-    public string Name;
-    public float baseHP;
-    public float curHP;
-    public float baseMP;
-    public float curMP;
-    public int stamina;
-    public int intellect;
-    public int dexterity;
-    public int agilityl;
-
+    public int level;
+    public int Stamina;
+    public int Strength;
+    public int Intelligence;
+    public int Agility;
 }

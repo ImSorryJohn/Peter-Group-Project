@@ -5488,10 +5488,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47005785283c87e44a16cffadf33eb95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
-  speakerName: {fileID: 0}
-  speakerDialogue: {fileID: 0}
-  dialogueCache: []
-  isActive: 0
 --- !u!1 &598530358
 GameObject:
   m_ObjectHideFlags: 0
@@ -8822,7 +8818,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -33.2, y: 27.900024}
+  m_AnchoredPosition: {x: -33.19995, y: 27.900024}
   m_SizeDelta: {x: 130.001, y: 113.09}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &934166880
@@ -11488,7 +11484,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -704, y: 527.73486}
+  m_AnchoredPosition: {x: -704, y: 492}
   m_SizeDelta: {x: 381.181, y: 58.642}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1294770274
@@ -13582,8 +13578,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 2.575036, z: 1.2479095}
-  m_Center: {x: 0, y: 0.787518, z: -0.04314339}
+  m_Size: {x: 1, y: 2.0419478, z: 1.2479095}
+  m_Center: {x: 0, y: 1.0540621, z: -0.04314339}
 --- !u!54 &1479635253
 Rigidbody:
   m_ObjectHideFlags: 0

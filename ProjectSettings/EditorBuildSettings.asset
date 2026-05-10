@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/RPG TUD/Scenes/Development/RPG Level.unity
+    path: Assets/Group Stuff/Scenes/RPG Template/RPG Level.unity
     guid: 2f118784652a3d841ac190ae391ad761
   - enabled: 1
     path: Assets/Group Stuff/Scenes/BattleScene.unity
